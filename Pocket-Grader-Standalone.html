@@ -25,10 +25,14 @@ button,.btn,select,input{font:inherit}button,.btn{border:0;border-radius:12px;pa
 button.secondary{background:var(--panel2);border:1px solid var(--line);color:var(--txt)}button:disabled{opacity:.5}
 input,select{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:11px;padding:11px;width:100%;min-width:0}
 label{font-size:12px;color:var(--muted);display:block;margin:8px 0 5px}
-.tabs{position:fixed;z-index:5;bottom:0;left:0;right:0;background:#10101df2;backdrop-filter:blur(18px);border-top:1px solid #ffffff1a;display:flex;justify-content:center;padding:9px max(8px,env(safe-area-inset-left)) calc(9px + env(safe-area-inset-bottom));gap:4px}
-.tabs button{background:transparent;color:#aaa8c3;border:1px solid transparent;padding:9px 7px;font-size:11px;flex:1;max-width:125px}
-.tabs button.active{color:white;background:linear-gradient(110deg,#8d6bdc55,#e5c45c33);border-color:#ffffff22}
-.tabicon{display:block;font-size:18px;margin-bottom:3px}
+@property --spin{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes footerOrbit{to{--spin:360deg}}
+.tabs{position:fixed;z-index:5;bottom:calc(7px + env(safe-area-inset-bottom));left:10px;right:10px;max-width:650px;margin:auto;background:rgba(12,25,22,.94);backdrop-filter:blur(20px);border:1px solid #ffffff18;border-radius:25px;display:flex;justify-content:center;padding:7px 8px;gap:2px;box-shadow:0 8px 35px #0008;isolation:isolate}
+.tabs:before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;background:conic-gradient(from var(--spin),transparent 0deg,transparent 245deg,#8be9b0 285deg,#c5a0ff 315deg,#f3d77a 335deg,transparent 360deg);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:footerOrbit 5s linear infinite;pointer-events:none;z-index:-1}
+.tabs button{background:transparent;color:#a9b7b0;border:1px solid transparent;border-radius:16px;padding:6px 4px;font-size:10px;line-height:1.15;flex:1;max-width:125px;min-width:0}
+.tabs button.active{color:#fff;background:linear-gradient(110deg,#6bd99a35,#b58ae835);border-color:#ffffff1c}
+.tabicon{display:block;font-size:15px;margin-bottom:2px}
+@media(prefers-reduced-motion:reduce){.tabs:before{animation:none}}
 .view{display:none}.view.active{display:block}
 .preview{aspect-ratio:63/88;width:min(100%,220px);margin:10px auto;background:repeating-linear-gradient(135deg,#25253d,#25253d 12px,#2d2d49 12px,#2d2d49 24px);border:2px dashed var(--a);border-radius:13px;position:relative;overflow:hidden;display:grid;place-items:center}
 .preview img{width:100%;height:100%;object-fit:contain;position:absolute;inset:0}.guide{position:absolute;inset:5%;border:2px solid #65d9f4;touch-action:none}.innerguide{position:absolute;inset:8%;border:2px solid #ff9b55;touch-action:none}
@@ -44,7 +48,7 @@ hr{border:0;border-top:1px solid var(--line);margin:14px 0}
 @media(min-width:650px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.preview{width:230px}}
 </style>
 </head>
-<body data-theme="purple-yellow">
+<body data-theme="green-purple">
 <header><div class="brand"><div class="logo">◇</div><div><h1>Pocket Grader</h1><div class="sub">Your pocket-sized TCG grading companion</div></div></div><span class="pill">TEST BUILD</span></header>
 <main>
 <section id="scan" class="view active">
