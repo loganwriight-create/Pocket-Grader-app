@@ -1,0 +1,17 @@
+{
+  "name": "Pocket Grader",
+  "short_name": "Pocket Grader",
+  "start_url": "./Pocket-Grader-Standalone.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#071b17",
+  "theme_color": "#102b25",
+  "icons": [
+    {
+      "src": "assets/pocket-grader-icon.jpg",
+      "sizes": "any",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}
