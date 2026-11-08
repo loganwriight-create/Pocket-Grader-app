@@ -8,9 +8,9 @@
   "theme_color": "#102b25",
   "icons": [
     {
-      "src": "assets/pocket-grader-icon-hq.jpg",
-      "sizes": "180x180",
-      "type": "image/jpeg",
+      "src": "assets/pocket-grader-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
       "purpose": "any"
     }
   ]
